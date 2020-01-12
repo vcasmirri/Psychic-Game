@@ -21,24 +21,25 @@ if ((userGuess === computerGuess) && (event.keyCode >= 65 && event.keyCode <= 90
     wins.textContent = "Wins: " + winCounter;
     guessCounter = 9;
     guessesLeft.textContent = "Guesses Left: 9";
-    guessesMade.textContent = "Guesses Made:";
+    guessesMade.textContent = "Guesses Made: ";
 }
 
 // Defines parameters for losing, increases loss counter, reduces Guesses Left, adds to Guesses Made
 else if (event.keyCode >= 65 && event.keyCode <= 90) {
     guessCounter--;
     guessesLeft.textContent = "Guesses Left: " + guessCounter;
-    guessesMade.textContent += userGuess;
+    guessesMade.textContent += userGuess + " ";
     //code for storing guesses made here
     if (guessCounter === 0) {
         lossCounter++;
         losses.textContent = "Losses: " + lossCounter;
         guessCounter = 9;
         guessesLeft.textContent = "Guesses Left: 9";
-        guessesMade.textContent = "Guesses Made:";
+        guessesMade.textContent = "Guesses Made: ";
     }
 }
 
+// Alerts the user if the key they pressed was not a letter.
 else {
     alert("That's not a letter!");
 }
